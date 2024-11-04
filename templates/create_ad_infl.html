@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Ad request</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='campaigns.css')}}">
+</head>
+<body>
+  <header>
+        <h1>InfluenSphere</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/idashboard" class="nav-link">Profile</a></li>
+            <li><a href="/iupdate" class="nav-link">Update Profile</a></li>
+            <li><a href="/ads" class="nav-link">Ads</a></li>
+            <li><a href="/search_campaigns" class="nav-link">Search Campaigns</a></li>
+            <li><a href="/logout" class="nav-link">Logout</a></li>
+        </ul>
+    </nav>
+    <form action='/create_ad_request_infl' method="POST">
+    <label for="campaign_id">Campaign ID:</label>
+    <input type="text" id="campaign_id" name="campaign_id" >
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+
+
+    <label for="payment_amount">Payment Amount:</label>
+    <input type="number" id="payment_amount" name="payment_amount" required>
+
+    <input type="submit" value="Send Ad Request">
+    </form>
+</body>
+</html>

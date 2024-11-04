@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='update.css') }}">
+
+  <title>Sponsor update</title>
+</head>
+<body>
+<header>
+    <h1>InfluenSphere</h1>
+  </header>
+    <nav>
+        <ul>
+            <li><a href="/sdashboard" class="nav-link">Profile</a></li>
+            <li><a href="/supdate" class="nav-link">Update Profile</a></li>
+            <li><a href="/campaigns" class="nav-link">Campaigns</a></li>
+            <li><a href="/search" class="nav-link">Search</a>
+            <li><a href="/ads_details" class="nav-link">Ads Status</a>
+            <li><a href="/logout" class="nav-link">Logout</a>
+        </ul>
+    </nav>
+  <div class="update-wrap">
+    <div class="update-html">
+
+      <div class="update-form">
+        <div class="sign-in-htm">
+          <form method="POST">
+
+          <div class="group">
+            <label for="user" class="label">New Username</label>
+            <input id="user" type="text" class="input" name="username">
+          </div>
+          <div class="group">
+            <label for="pass" class="label">New Password</label>
+            <input id="pass" type="password" class="input" data-type="password" name="password">
+          </div>
+          <div class="group">
+            <label for="industry" class="label">Industry</label>
+            <input id="industry" type="text" class="input" name="industry">
+          </div>
+
+            <div class="group">
+            <label for="bio" class="label">Bio</label>
+            <input id="bio" type="text" class="input" name="bio">
+          </div>
+
+
+          <div class="group">
+            <input type="submit" class="button" value="Register">
+          </div>
+          <div class="hr"></div>
+
+          </form>
+        </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

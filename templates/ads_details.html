@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Campaigns</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='campaigns.css')}}">
+</head>
+<body>
+  <header>
+        <h1>InfluenSphere</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/sdashboard" class="nav-link">Profile</a></li>
+            <li><a href="/supdate" class="nav-link">Update Profile</a></li>
+            <li><a href="/campaigns" class="nav-link">Campaigns</a></li>
+            <li><a href="/search" class="nav-link">Search</a>
+            <li><a href="/ads_details" class="nav-link">Ads Status</a>
+            <li><a href="/logout" class="nav-link">Logout</a>
+        </ul>
+    </nav>
+      <h3>All ads</h3>
+        <div class="campaigns">
+                {% for ad in all_ads %}
+                    <div class="card">
+                        <div class="container">
+                            <h2>ID:{{ ad.id }}</h2>
+                            <p>CAMPAIGN:{{ ad.campaign.name }}</p>
+                            <p>REQUIREMENTS: {{ ad.requirements }}</p>
+                            <p>MESSAGE: {{ ad.messages }}</p>
+                            <p>PAYMENT: {{ ad.payment_amount }}</p>
+                            <p>STATUS: {{ ad.status }}</p>
+                            <form action="{{ url_for('delete_ad', id=ad.id) }}" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="button" onclick="confirmDelete()">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+    <h3>Accepted Ads</h3>
+    <div class="campaigns">
+                {% for ad in accepted_ads %}
+                    <div class="card">
+                        <div class="container">
+                            <h2>ID:{{ ad.id }}</h2>
+                            <p>CAMPAIGN:{{ ad.campaign.name }}</p>
+                            <p>REQUIREMENTS: {{ ad.requirements }}</p>
+                            <p>MESSAGE: {{ ad.messages }}</p>
+                            <p>PAYMENT: {{ ad.payment_amount }}</p>
+                            <form action="{{ url_for('delete_ad', id=ad.id) }}" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="button" onclick="confirmDelete()">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+    <h3>Rejected Ads</h3>
+    <div class="campaigns">
+                {% for ad in rejected_ads %}
+                    <div class="card">
+                        <div class="container">
+                            <h2>ID:{{ ad.id }}</h2>
+                            <p>CAMPAIGN:{{ ad.campaign.name }}</p>
+                            <p>REQUIREMENTS: {{ ad.requirements }}</p>
+                            <p>MESSAGE: {{ ad.messages }}</p>
+                            <p>PAYMENT: {{ ad.payment_amount }}</p>
+                            <form action="{{ url_for('delete_ad', id=ad.id) }}" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="button" onclick="confirmDelete()">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+    <h3>Pending Ads</h3>
+    <div class="campaigns">
+                {% for ad in pending_ads %}
+                    <div class="card">
+                        <div class="container">
+                            <h2>ID:{{ ad.id }}</h2>
+                            <p>CAMPAIGN:{{ ad.campaign.name }}</p>
+                            <p>REQUIREMENTS: {{ ad.requirements }}</p>
+                            <p>MESSAGE: {{ ad.messages }}</p>
+                            <p>PAYMENT: {{ ad.payment_amount }}</p>
+                            <form action="{{ url_for('delete_ad', id=ad.id) }}" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="button" onclick="confirmDelete()">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+
+  </body>
+</html>
+

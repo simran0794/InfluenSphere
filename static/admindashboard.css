@@ -1,0 +1,164 @@
+
+header {
+    background: #419E98;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #007872;
+    padding: 5px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    left-margin: 30px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+    margin-left:40px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ccc;
+}
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.campaigns {
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.campaigns table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.campaigns th, .campaigns td {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+}
+
+.campaigns th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    color: #333;
+}
+
+.campaigns tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+.campaigns tr:hover {
+    background-color: #eee;
+}
+
+.campaigns .btn-view {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.campaigns .btn-view:hover {
+    background-color: #23527c;
+}
+
+.campaigns .btn-delete {
+    background-color: #d9534f;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.campaigns .btn-delete:hover {
+    background-color: #c9302c;
+}
+
+.users {
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.users table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.users th, .users td {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+}
+
+.users th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    color: #333;
+}
+
+.users tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+.users tr:hover {
+    background-color: #eee;
+}
+
+.users .btn-flag {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.users .btn-flag:hover {
+    background-color: #23527c;
+}
+.campaigns .btn-view, .campaigns .btn-delete, .users .btn-flag {
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+.campaigns .btn-view:hover, .campaigns .btn-delete:hover, .users .btn-flag:hover {
+    transform: scale(1.1);
+}

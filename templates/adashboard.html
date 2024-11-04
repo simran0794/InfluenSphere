@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='admindashboard.css')}}">
+</head>
+<body>
+    <header>
+        <h1>InfluenSphere</h1>
+    </header>
+    <nav>
+
+    </nav>
+    <main>
+        <section class="dashboard">
+            <h1>Admin Dashboard</h1>
+            <div class="campaigns">
+                <h2>Ongoing Campaigns</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Campaign id</th>
+                            <th>Campaign Name</th>
+                            <th>Campaign Description</th>
+                            <th>Creator</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for campaign in campaigns %}
+                        <tr>
+                            <td>{{campaign.id}}</td>
+                            <td>{{campaign.name}}</td>
+                            <td>{{campaign.description}}</td>
+                            <td>{{campaign.sponsor.username}}</td>
+                            <td>
+                                <form action="{{ url_for('adashboard') }}" method="post">
+                                    <input type="hidden" name="campaign_id" value="{{ campaign.id }}">
+                                    <button type="submit" name="action" value="view">View</button>
+                                </form>
+                                {% if not campaign.flag %}
+                                <form action="{{ url_for('adashboard') }}" method="post">
+                                    <input type="hidden" name="campaign_id" value="{{ campaign.id }}">
+                                    <button type="submit" name="action" value="flag">Flag</button>
+                                </form>
+                                {% endif %}
+                                {% if campaign.flag %}
+                                <form action="{{ url_for('adashboard') }}" method="post">
+                                    <input type="hidden" name="campaign_id" value="{{ campaign.id }}">
+                                    <button type="submit" name="action" value="unflag">Unflag</button>
+                                </form>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="users">
+                <h2>Users</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        <tr>
+                            <td>{{user.username}}</td>
+                            <td>{{user.email}}</td>
+                            <td>
+                                <form action="{{ url_for('adashboard') }}" method="post">
+                                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                                    <button type="submit" name="action_user" value="view">View</button>
+                                </form>
+                                {% if not user.flag %}
+                                <form action="{{ url_for('adashboard') }}" method="post">
+                                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                                    <button type="submit" name="action_user" value="flag">Flag</button>
+                                </form>
+                                {% endif %}
+                                {% if user.flag %}
+                                <form action="{{ url_for('adashboard') }}" method="post">
+                                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                                    <button type="submit" name="action_user" value="unflag">Unflag</button>
+                                </form>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

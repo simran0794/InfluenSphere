@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='loginstyle.css') }}">
+
+  <title>Influencer registration</title>
+</head>
+<body>
+<header>
+    <h1>InfluenSphere</h1>
+
+  </header>
+  <div class="login-wrap">
+    <div class="login-html">
+
+      <div class="login-form">
+        <form method="POST">
+        <div class="sign-in-htm">
+          <div class="group">
+            <label for="user" class="label">Email</label>
+            <input id="email" type="email" class="input" name="email">
+          </div>
+          <div class="group">
+            <label for="user" class="label">Username</label>
+            <input id="user" type="text" class="input" name="username">
+          </div>
+          <div class="group">
+            <label for="pass" class="label">Password</label>
+            <input id="pass" type="password" class="input" data-type="password" name="password">
+          </div>
+          <div class="group">
+            <label for="user" class="label">Bio</label>
+            <input id="bio" type="text" class="input" name="bio">
+          </div>
+          <div class="group">
+            <label for="user" class="label">Reach</label>
+            <input id="reach" type="text" class="input" name="reach">
+          </div>
+
+          <label for="category">Category:</label>
+                    <select id="category" name="category">
+                      <option value="Food">Food</option>
+                      <option value="Health & Fashion">Health and Fashion</option>
+                      <option value="Lifestyle">Lifestyle</option>
+                      <option value="Memes">Memes</option>
+                      <option value="Pop Culture">Pop Culture</option>
+                      <option value="Travel">Travel</option>
+                      <option value="Tech">Tech</option>
+                      <option value="Gaming">Gaming</option>
+                      <option value="Parenting">Parenting</option>
+                      <option value="Finance">Finance</option>
+                      <option value="Education">Education</option>
+                      <option value="Environment">Environment</option>
+                      <option value="Pet">Pet</option>
+                      <option value="Art">Art</option>
+                      <option value="Music">Music</option>
+
+                    </select>
+
+            <div class="platform">
+              <h3>Platform presence</h3>
+
+              <div class="platform-options">
+              <label><input type="checkbox" value="Facebook" id="facebook" /> Facebook</label>
+              <label><input type="checkbox" value="Instagram" id="instagram" /> Instagram</label>
+              <label><input type="checkbox" value="Twitter" id="twitter" /> Twitter</label>
+              <label><input type="checkbox" value="LinkedIn" id="linkedin" /> LinkedIn</label>
+              <label><input type="checkbox" value="YouTube" id="youtube" /> YouTube</label>
+              <label><input type="checkbox" value="TikTok" id="tiktok" /> TikTok</label>
+              <label><input type="checkbox" value="Pinterest" id="pinterest" /> Pinterest</label>
+              <label><input type="checkbox" value="Reddit" id="reddit" /> Reddit</label>
+              </div>
+              <div class="social-media-ids">
+                <div id="facebook-id" style="display: none;">
+                  <label for="facebook-id-input">Facebook ID:</label>
+                  <input type="text" id="facebook-id-input" name="facebook_id"/>
+                </div>
+                <div id="instagram-id" style="display: none;">
+                  <label for="instagram-id-input">Instagram ID:</label>
+                  <input type="text" id="instagram-id-input" name="instagram_id"/>
+                </div>
+                <div id="twitter-id" style="display: none;">
+                  <label for="twitter-id-input">Twitter ID:</label>
+                  <input type="text" id="twitter-id-input" name="twitter_id" />
+                </div>
+                <div id="linkedin-id" style="display: none;">
+                  <label for="linkedin-id-input">LinkedIn ID:</label>
+                  <input type="text" id="linkedin-id-input" name="linkedin_id"/>
+                </div>
+                <div id="youtube-id" style="display: none;">
+                  <label for="youtube-id-input">YouTube ID:</label>
+                  <input type="text" id="youtube-id-input" name="youtube_id" />
+                </div>
+                <div id="tiktok-id" style="display: none;">
+                  <label for="tiktok-id-input">TikTok ID:</label>
+                  <input type="text" id="tiktok-id-input" name="tiktok_id"/>
+                </div>
+                <div id="pinterest-id" style="display: none;">
+                  <label for="pinterest-id-input">Pinterest ID:</label>
+                  <input type="text" id="pinterest-id-input" name="pinterest_id"/>
+                </div>
+                <div id="reddit-id" style="display: none;">
+                  <label for="reddit-id-input">Reddit ID:</label>
+                  <input type="text" id="reddit-id-input" name="reddit_id"/>
+                </div>
+                </div>
+
+              
+
+
+
+
+          </div>
+
+          <div class="group">
+            <input type="submit" class="button" value="Register">
+          </div>
+          <div class="hr"></div>
+
+
+        </div>
+        </form>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    const platformOptions = document.querySelectorAll('.platform-options input[type="checkbox"]');
+    const socialMediaIds = document.querySelectorAll('.social-media-ids div');
+
+    platformOptions.forEach((option) => {
+  option.addEventListener('change', (e) => {
+    const id = e.target.id;
+    const socialMediaIdDiv = document.getElementById(`${id}-id`);
+    if (e.target.checked) {
+      socialMediaIdDiv.style.display = 'block';
+    } else {
+      socialMediaIdDiv.style.display = 'none';
+    }
+  });
+});
+  </script>
+</body>
+</html>

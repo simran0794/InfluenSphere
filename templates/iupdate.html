@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencer Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='update.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>InfluenSphere</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="idashboard" class="nav-link">Profile</a></li>
+            <li><a href="iupdate" class="nav-link">Update Profile</a></li>
+            <li><a href="/ads" class="nav-link">Ads</a></li>
+            <li><a href="/search_campaigns" class="nav-link">Search Campaigns</a></li>
+            <li><a href="/logout" class="nav-link">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="update-wrap">
+    <div class="update-html">
+
+      <div class="update-form">
+        <form method="POST">
+        <div class="update-in-htm">
+
+          <div class="group">
+            <label for="user" class="label">New Username</label>
+            <input id="user" type="text" class="input" name="username">
+          </div>
+          <div class="group">
+            <label for="pass" class="label">New Password</label>
+            <input id="pass" type="password" class="input" data-type="password" name="password">
+          </div>
+          <div class="group">
+            <label for="user" class="label">New Bio</label>
+            <input id="bio" type="text" class="input" name="bio">
+          </div>
+            <div class="group">
+            <label for="user" class="label">Reach</label>
+            <input id="reach" type="text" class="input" name="reach">
+          </div>
+            <label for="category">Category:</label>
+                    <select id="category" name="category">
+                      <option value="Food">Food</option>
+                      <option value="Health & Fashion">Health and Fashion</option>
+                      <option value="Lifestyle">Lifestyle</option>
+                      <option value="Memes">Memes</option>
+                      <option value="Pop Culture">Pop Culture</option>
+                      <option value="Travel">Travel</option>
+                      <option value="Tech">Tech</option>
+                      <option value="Gaming">Gaming</option>
+                      <option value="Parenting">Parenting</option>
+                      <option value="Finance">Finance</option>
+                      <option value="Education">Education</option>
+                      <option value="Environment">Environment</option>
+                      <option value="Pet">Pet</option>
+                      <option value="Art">Art</option>
+                      <option value="Music">Music</option>
+
+                    </select>
+            <div class="platform">
+              <label>Add Platform Presence</label>
+
+              <div class="platform-options">
+              <label><input type="checkbox" value="Facebook" id="facebook" /> Facebook</label>
+              <label><input type="checkbox" value="Instagram" id="instagram" /> Instagram</label>
+              <label><input type="checkbox" value="Twitter" id="twitter" /> Twitter</label>
+              <label><input type="checkbox" value="LinkedIn" id="linkedin" /> LinkedIn</label>
+              <label><input type="checkbox" value="YouTube" id="youtube" /> YouTube</label>
+              <label><input type="checkbox" value="TikTok" id="tiktok" /> TikTok</label>
+              <label><input type="checkbox" value="Pinterest" id="pinterest" /> Pinterest</label>
+              <label><input type="checkbox" value="Reddit" id="reddit" /> Reddit</label>
+              </div>
+              <div class="social-media-ids">
+                <div id="facebook-id" style="display: none;">
+                  <label for="facebook-id-input">Facebook ID:</label>
+                  <input type="text" id="facebook-id-input" name="facebook_id"/>
+                </div>
+                <div id="instagram-id" style="display: none;">
+                  <label for="instagram-id-input">Instagram ID:</label>
+                  <input type="text" id="instagram-id-input" name="instagram_id"/>
+                </div>
+                <div id="twitter-id" style="display: none;">
+                  <label for="twitter-id-input">Twitter ID:</label>
+                  <input type="text" id="twitter-id-input" name="twitter_id" />
+                </div>
+                <div id="linkedin-id" style="display: none;">
+                  <label for="linkedin-id-input">LinkedIn ID:</label>
+                  <input type="text" id="linkedin-id-input" name="linkedin_id"/>
+                </div>
+                <div id="youtube-id" style="display: none;">
+                  <label for="youtube-id-input">YouTube ID:</label>
+                  <input type="text" id="youtube-id-input" name="youtube_id" />
+                </div>
+                <div id="tiktok-id" style="display: none;">
+                  <label for="tiktok-id-input">TikTok ID:</label>
+                  <input type="text" id="tiktok-id-input" name="tiktok_id"/>
+                </div>
+                <div id="pinterest-id" style="display: none;">
+                  <label for="pinterest-id-input">Pinterest ID:</label>
+                  <input type="text" id="pinterest-id-input" name="pinterest_id"/>
+                </div>
+                <div id="reddit-id" style="display: none;">
+                  <label for="reddit-id-input">Reddit ID:</label>
+                  <input type="text" id="reddit-id-input" name="reddit_id"/>
+                </div>
+                </div>
+
+
+
+
+
+
+          </div>
+
+          <div class="group">
+            <input type="submit" class="button" value="Update">
+          </div>
+          <div class="hr"></div>
+        </div>
+        </form>
+      </div>
+    </div>
+    </div>
+<script>
+    const platformOptions = document.querySelectorAll('.platform-options input[type="checkbox"]');
+    const socialMediaIds = document.querySelectorAll('.social-media-ids div');
+
+    platformOptions.forEach((option) => {
+  option.addEventListener('change', (e) => {
+    const id = e.target.id;
+    const socialMediaIdDiv = document.getElementById(`${id}-id`);
+    if (e.target.checked) {
+      socialMediaIdDiv.style.display = 'block';
+    } else {
+      socialMediaIdDiv.style.display = 'none';
+    }
+  });
+});
+  </script>
+
+</body>
+</html>

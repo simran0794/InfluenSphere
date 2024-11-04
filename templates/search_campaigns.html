@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Users</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='campaigns.css') }}">
+</head>
+<body>
+    <header>
+        <h1>InfluenSphere</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="idashboard" class="nav-link">Profile</a></li>
+            <li><a href="iupdate" class="nav-link">Update Profile</a></li>
+            <li><a href="/ads" class="nav-link">Ads</a></li>
+            <li><a href="search_campaigns" class="nav-link">Search Campaigns</a></li>
+            <li><a href="/logout" class="nav-link">Logout</a></li>
+        </ul>
+    </nav>
+    <form id="search-form" action="/search_campaigns" method="post">
+        <input type="search" id="search-input" name="search_term" placeholder="Search by name or email">
+        <input type="number" id="budget" name="budget" placeholder="Enter Minimum budget">
+        <button type="submit">Search</button>
+    </form>
+    <div class="search-results">
+        <ul class="user-list">
+                {% for campaign in campaigns %}
+                    <li>
+                        <p class="user-name"><h5>{{ campaign.name }}</h5></p>
+                        <p class="campaign-id" >CAMPAIGN ID: {{ campaign.id }}</p>
+                        <p class="user-email">DESCRIPTION: {{ campaign.description }}</p>
+                        <p class="user-bio">BUDGET: {{ campaign.budget }}</p>
+                        <button class="send-ad-request"><a href="{{ url_for('create_ad_request_infl', sponsor_id=campaign.sponsor_id) }}" class="send-ad-request">Send Ad Request</a></button>
+                    </li>
+                {% endfor %}
+            </ul>
+    </div>
+</body>
+</html>

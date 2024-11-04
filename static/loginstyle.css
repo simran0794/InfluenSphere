@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f6f6f6;
+  font-family: Arial, sans-serif;
+}
+header {
+  background: #419E98;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+}
+.login-wrap {
+  width: 400px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-html {
+  position: relative;
+  padding: 20px;
+}
+
+.tab {
+  display: inline-block;
+  margin: 0 20px;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background: #f6f6f6;
+}
+
+
+
+
+.group {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.button {
+  width: 100%;
+  padding: 10px;
+  background: #419E98;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background:#82C4BE;
+}
+
+.hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+.foot-lnk {
+  text-align: center;
+}
+
+.register-btns {
+  margin-top: 20px;
+  display:flex;
+}
+
+.register-btns input[type="button"] {
+  width: 45%;
+  margin: 0 10px;
+}
+.platform {
+  margin-top: 20px;
+  display:flex;
+  margin-bottom: 20px;
+}
+.platform h3{
+  margin: 0;
+ }
+.platform input[type="button"] {
+  width: 45%;
+  margin: 0 10px;
+}
+.platform-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.platform-options label {
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.platform-options input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Social media IDs styles */
+.social-media-ids {
+  margin-top: 20px;
+}
+
+.social-media-ids div {
+  margin-bottom: 20px;
+}
+
+.social-media-ids label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.social-media-ids input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+}
+
+
+.platform-options input[type="checkbox"]:checked + label {
+  font-weight: bold;
+  color: #337ab7;
+}
+
+.social-media-ids div {
+  display: none;
+}
+
+.social-media-ids div.show {
+  display: block;
+}

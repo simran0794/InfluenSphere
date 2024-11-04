@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='admindashboard.css')}}">
+</head>
+<body>
+    <header>
+        <h1>InfluenSphere</h1>
+    </header>
+    <nav>
+
+    </nav>
+    <main>
+        <section class="dashboard">
+            <h1>Admin Dashboard</h1>
+            <h1>View Campaign</h1>
+            <div class="campaign">
+                <h2>{{ campaign.name }}</h2>
+                <p>{{ campaign.description }}</p>
+                <p>Start Date: {{ campaign.start_date }}</p>
+                <p>End Date: {{ campaign.end_date }}</p>
+                <p>Budget: {{ campaign.budget }}</p>
+                <p>Visibility: {{ campaign.visibility }}</p>
+                <p>Campaign ID: {{ campaign.id }}</p>
+                <p>Sponsor ID: {{ campaign.sponsor_id }}</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

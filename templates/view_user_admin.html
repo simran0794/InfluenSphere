@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='admindashboard.css')}}">
+</head>
+<body>
+    <header>
+        <h1>InfluenSphere</h1>
+    </header>
+    <nav>
+
+    </nav>
+    <main>
+        <section class="dashboard">
+            <h1>Admin Dashboard</h1>
+            <h1>View User</h1>
+            <div class="campaign">
+                <h2>{{ user.email }}</h2>
+                <p>{{ user.username }}</p>
+                <p>{{ user.type }}</p>
+                {% if user.type=='influencer' %}
+                <p>{{ user.bio }}</p>
+                <p>{{ user.category }}</p>
+                <p>{{ user.reach }}</p>
+                {% endif %}
+                {% if user.type=='sponsor' %}
+                <p>{{ user.bio }}</p>
+                <p>{{ user.industry }}</p>
+                {% endif %}
+            </div>
+        </section>
+    </main>
+</body>
+</html>

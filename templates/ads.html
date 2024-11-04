@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Campaigns</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='campaigns.css')}}">
+</head>
+<body>
+  <header>
+        <h1>InfluenSphere</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/idashboard" class="nav-link">Profile</a></li>
+            <li><a href="/iupdate" class="nav-link">Update Profile</a></li>
+            <li><a href="/ads" class="nav-link">Ads</a></li>
+            <li><a href="/search_campaigns" class="nav-link">Search Campaigns</a></li>
+            <li><a href="/logout" class="nav-link">Logout</a></li>
+        </ul>
+    </nav>
+
+
+  <div class="campaigns">
+        {% for ad in ad_requests %}
+            <div class="card">
+                <div class="container">
+                    <h4>Campaign: {{ ad.campaign.name }}</h4>
+                    <p>Sponsor: {{ ad.campaign.sponsor.username }}</p>
+                    <p>Messages: {{ ad.messages }}</p>
+                    <p>Requirements: {{ ad.requirements }}</p>
+                    <p>Payment Amount: {{ ad.payment_amount }}</p>
+                    <p>Status: {{ ad.status }}</p>
+                    <form action="{{ url_for('ads') }}" method="post">
+                        <input type="hidden" name="ad_id" value="{{ ad.id }}">
+                        <button type="submit" name="action" value="accept">Accept</button>
+                    </form>
+                    <form action="{{ url_for('ads') }}" method="post">
+                        <input type="hidden" name="ad_id" value="{{ ad.id }}">
+                        <button type="submit" name="action" value="reject">Reject</button>
+                    </form>
+                    <form action="{{ url_for('ads') }}" method="post">
+                        <input type="hidden" name="ad_id" value="{{ ad.id }}">
+                        <input type="number" name="negotiated_amount" value="{{ ad.payment_amount }}">
+                        <button type="submit" name="action" value="negotiate">Negotiate</button>
+                    </form>
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

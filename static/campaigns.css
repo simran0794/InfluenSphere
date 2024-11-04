@@ -1,0 +1,318 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #419E98;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+nav {
+    background-color: #007872;
+    padding: 5px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    left-margin: 30px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+    margin-left:40px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ccc;
+}
+.campaigns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.container h2 {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.container p {
+    margin-bottom: 10px;
+}
+.container button {
+    background-color: #82C4BE;
+    color: #fff;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.container button a{
+    color:white;
+}
+.container button:hover {
+    background-color: #419E98;
+}
+
+/* Style the delete button */
+.container button[type="button"] {
+    background-color: #e74c3c;
+}
+
+.container button[type="button"]:hover {
+    background-color: #c0392b;
+}
+
+/* search-form.css */
+
+#search-form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#search-input, #budget {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+#search-input:focus, #budget:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#search-input::placeholder, #budget::placeholder {
+  color: #999;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.search-results {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-list li {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-list li:last-child {
+  border-bottom: none;
+}
+
+.user-name {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.campaign-id, .user-email, .user-bio {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.send-ad-request {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.send-ad-request:hover {
+  background-color: #3e8e41;
+}
+
+.send-ad-request a {
+  text-decoration: none;
+  color: #fff;
+}
+
+form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+label:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+input[type="text"], input[type="number"], textarea {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+#category-select {
+  width: 250px;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+#category-select option {
+  padding: 10px;
+}
+
+#category-select option:selected {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"], input[type="date"], input[type="number"], textarea, select {
+  width: 100%;
+  height: 35px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 35px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+button {
+  margin-top: 20px;
+  background-color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+button a:hover {
+  color: #23527c;
+}
